@@ -1,0 +1,127 @@
+Di kesempatan ini kita akan membahas tentang Memahami Implementasi PHP Object Oriented Programming Dengan Mudah atau di singkat menjadi OOP.
+
+pemogramman berbasis Object saat ini sedang populer di kalangan programmer.
+Semakin banyak nya orang menggunakan OOP, saya pun tertarik untuk mempelajarnya. apalagi saat ini semakin marak nya framework php yang bermunculan menawarkan berbagai kemudahan memaksa saya untuk masuk kedalam jerat perkembangan pemogramman web.
+
+tidak bisa di pungkiri, mempelajari OOP PHP (PHP Object Oriented Programming) pada kenyataan nya harus memiliki usaha yang lebih untuk memahaminya. titik kesulitan nya adalah, saat kita sudah terbiasa menggunakan Procedural Code atau PHP Native berpindah ke Framework adalah stuktur penulisan yang lebih tertata membuat kita seperti terikat aturan. karena di framework kita mengenal yang namanya MVC ( Modul, View, Controller).
+
+nah saat saya terus membiasakan diri dengan menggunakan OOP, pelan pelan saya pun terbiasa dan saya akui OOP PHP (PHP Object Oriented Programming) banyak membantu dalam menyelesaikan web saya, apalagi saat tracing error code.
+
+oke langsung saja kita belajar Object Oriented Programming menggunakan PHP. kali ini saya akan membahas tentang Class, Object, Variabel, Method.
+
+analoginya seperti ini, ibaratkan kita akan membuat sebuah roti. tentu kita membutuhkan cetakan, bahan-bahan, dan cara membuat nya.
+nah bagaimana analogi ini berkerja pada class, object, Variable dan Method.
+
+Class kita ibaratkan sebagai cetakan.
+Variabel Kita ibaratkan sebagai bahan bahan membuat roti.
+Method adalah cara membuat roti
+dan Roti sebagai Object.
+
+nah bagaimana? sudah mengerti? kita bukan mau membuat roti loh, tapi hanya mengibaratkan.
+
+mungkin mengibaratkan dengan membuat roti menjadi racu juga ya, karena kita bukan koki, tetapi programmer.
+baiklah kita coba untuk menganalisa nya langsung pada code kita.
+di PHP saat kita membuat class, diawali dengan keyword class, variable/property dan method berada dalam apitan {} seperti code berikut ini
+
+ <?php
+class perkenalan
+{
+    public $namasaya;
+    public $alamat;
+   //ini adalah method
+ function menyapa()
+ {
+  echo "hallo nama saya adalah $this->namasaya";
+ }
+     function perkenalkandiri()
+    {
+         echo "nama saya adalah $this->namasaya dan saya beralamat di $this->alamat";
+     }
+ 
+  
+}
+?>
+
+
+pasti banyak yang bingung dan bertanya kenapa ada variable atau keyword "$this". dalan OOP php variable $this adalah variabel istimewa. digunakan untuk mengakses variable, bahkan kadang juga untuk mengakses class. tetapi perlu di perhatikan. penggunaan $this hanya bisa digunakan di dalam class, tidak dapat digunakan diluar class.
+
+begini lah penulisan yang salah menggunakan $this
+
+ <?php
+class perkenalan
+{
+    public $namasaya;
+    public $alamat;
+   //ini adalah method
+ function menyapa()
+ {
+  echo "hallo nama saya adalah $this->namasaya";
+ }
+     function perkenalkandiri()
+    {
+         echo "nama saya adalah $this->namasaya dan saya beralamat di $this->alamat";
+     }
+ 
+  
+}
+$this->alamat;
+?>
+
+lihat code diatas? memanggil variabel dengan menggunakan $this di luar Class menghasilkan error.
+
+dalam pembuatan object php, kita akan menggunakan keyword new diikuti namaClass()
+contohnya seperti ini.
+
+
+ <?php
+class perkenalan
+{
+    public $namasaya;
+    public $alamat;
+   //ini adalah method
+ function menyapa()
+ {
+  echo "hallo nama saya adalah $this->namasaya";
+ }
+     function perkenalkandiri()
+    {
+         echo "nama saya adalah $this->namasaya dan saya beralamat di $this->alamat";
+     }
+ 
+  
+}
+$kenalan = new perkenalan();
+
+?>
+tentunya variabel harus di setting. untuk menuliskan setting variable nya dengan cara
+
+$namaObject->property = nilai;
+
+agar kelihatan bagaimana cara nya. perhatikan kelanjutan code berikut ini.
+ 
+<?php
+class perkenalan
+{
+    public $namasaya;
+    public $alamat;
+   //ini adalah method
+ function menyapa()
+ {
+  echo "hallo nama saya adalah $this->namasaya";
+ }
+     function perkenalkandiri()
+    {
+         echo "nama saya adalah $this->namasaya dan saya beralamat di $this->alamat";
+     }
+ 
+  
+}
+$kenalan = new perkenalan();
+$kenalan->namasaya = "Muhammad Rafiqi Liputo";
+$kenalan->alamat = "Kota Padang";
+$kenalan->menyapa();
+echo "<br>";
+$kenalan->perkenalkandiri();
+
+?>
+Nah bagaimana? mudah bukan? silahkan..  tidak begitu sulit.
